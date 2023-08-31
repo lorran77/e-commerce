@@ -1,8 +1,7 @@
 
 export default {
-    content: ["./src/**/*.{html,js}"],
-    theme: {
-      extend: {},
-    },
-    plugins: [],
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
   }
+}

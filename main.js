@@ -77,7 +77,7 @@ const catalogo = [
 
 for (const produtoCatalogo of catalogo)
 {
-const cartaoProduto = `<div  class='' id="card-produto-${produtoCatalogo.id}">
+const cartaoProduto = `<div  class='border-solid border-2 border-black w-48 m-2' id="card-produto-${produtoCatalogo.id}">
 <img src="../img/${produtoCatalogo.imagem}" alt="produto do Magazine E-Commerce">
 <p class='marca'>${produtoCatalogo.marca}</p>
 <p class='marca'>${produtoCatalogo.nome}</p>
