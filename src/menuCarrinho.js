@@ -105,8 +105,7 @@ function desenharProdutoNoCarrinho(idProduto)
     `;
 
     elementoArticleProduto.innerHTML = cartaoProdutoCarrinho;
-
-    containerProdutosCarrinho.appendChild(elementoArticleProduto) += cartaoProdutoCarrinho;
+    containerProdutosCarrinho.appendChild(elementoArticleProduto);
 
     document.getElementById(`decrementar-produto-${produto.id}`).addEventListener('click', () => decrementarQuantidadeProduto(produto.id));
 

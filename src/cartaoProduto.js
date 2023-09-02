@@ -12,7 +12,7 @@ const cartaoProduto = `<div  class='border-solid w-48 m-2 flex flex-col p-2 just
 <p class='text-sm'>R$ ${produtoCatalogo.preco}</p>
 <button id='adicionar-${produtoCatalogo.id}' class="bg-slate-950 text-slate-200 hover:bg-green-700">Adicionar<i class="fa-solid fa-cart-plus ml-2"></i></button>
 </div>`;
-
+    
 document.getElementById("container-produto").innerHTML += cartaoProduto;
     }
 
