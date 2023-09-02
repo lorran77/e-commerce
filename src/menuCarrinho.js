@@ -1,9 +1,6 @@
 import { catalogo } from "./utilidades";
 
-const idProdutoCarrinhoComQuantidade =
-{
-
-};
+const idProdutoCarrinhoComQuantidade ={};
 
 function abrirCarrinho()
 {
@@ -40,12 +37,14 @@ function renderizarProdutosCarrinho()
 function removerDoCarrinho(idProduto)
 {
     delete idProdutoCarrinhoComQuantidade[idProduto];
+    atualizarPrecoCarrinho();
     renderizarProdutosCarrinho();
 }
 
 function incrementarQuantidadeProduto(idProduto)
 {
     idProdutoCarrinhoComQuantidade[idProduto]++;
+    atualizarPrecoCarrinho();
     atualizarInformacaoQuantidade(idProduto);
 }
 
@@ -58,6 +57,7 @@ function decrementarQuantidadeProduto(idProduto)
     }
 
     idProdutoCarrinhoComQuantidade[idProduto]--;
+    atualizarPrecoCarrinho();
     atualizarInformacaoQuantidade(idProduto);
 }
 
@@ -123,5 +123,19 @@ export function adicionarAoCarrinho(idProduto)
     };
 
     idProdutoCarrinhoComQuantidade[idProduto] = 1;
+    atualizarPrecoCarrinho();
     desenharProdutoNoCarrinho(idProduto);
+}
+
+export function atualizarPrecoCarrinho()
+{
+    const precoCarrinho = document.getElementById('preco-total');
+    let precoTotalCarrinho = 0;
+
+    for(const idProdutoNoCarrinho in idProdutoCarrinhoComQuantidade)
+    {
+        precoTotalCarrinho += catalogo.find((p) => p.id === idProdutoNoCarrinho).preco * idProdutoCarrinhoComQuantidade[idProdutoNoCarrinho];
+    }
+
+    precoCarrinho.innerText =`Total: R$${precoTotalCarrinho}`;
 }
