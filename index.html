@@ -30,8 +30,8 @@
 
       </section>
 
-      <p id="preco-total" class="bg-slate-200 text-green-800 roundes-sm pl-5 ">Total: </p>
-      <button class="bg-slate-200 text-black p-1">Finalizar compra</button>
+      <p id="preco-total" class="bg-slate-200 text-green-800 rounded-sm pl-5 ">Total: </p>
+      <button class="bg-slate-200 text-black p-1 hover:bg-slate-900 hover:text-slate-200">Finalizar compra</button>
     </section>
 
     <header
@@ -47,7 +47,27 @@
       </div>
     </header>
 
-    <main>
+    <main class="flex flex-col items-center">
+
+      <section id="filtros" class="p-10 flex">
+
+      <div class="px-2">
+        <input id="exibir-todos" type="radio" name="filtro" class="peer hidden" checked>
+        <label for="exibir-todos" class="peer-checked:bg-slate-950 peer-checked:text-slate-200 peer-checked:font-bold p-2 rounded-xl select-none cursor-pointer">Todos</label>
+      </div>
+
+      <div class="px-2">
+        <input id="exibir-masculino" type="radio" name="filtro" class="peer hidden">
+        <label for="exibir-masculino" class="peer-checked:bg-slate-950 peer-checked:text-slate-200 peer-checked:font-bold p-2 rounded-xl select-none cursor-pointer">Masculino</label>
+      </div>
+
+      <div class="px-2">
+        <input id="exibir-feminino" type="radio" name="filtro" class="peer hidden">
+        <label for="exibir-feminino" class="peer-checked:bg-slate-950 peer-checked:text-slate-200 peer-checked:font-bold p-2 rounded-xl select-none cursor-pointer">Feminino</label>
+      </div>
+
+      </section>
+
       <section
         class="flex flex-wrap p-10 justify-center gap-10"
         id="container-produto"
